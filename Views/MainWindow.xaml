@@ -1,12 +1,44 @@
-﻿<Window x:Class="StudentiModelView.MainWindow"
+﻿<Window x:Class="ListViewProgram.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StudentiModelView"
+        xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView Name="StudentsV" Grid.Column="0" Grid.RowSpan="7" ItemsSource="{Binding .}"
+                  SelectionChanged="Students_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Key}" FontWeight="DemiBold"/>
+                        <TextBlock Text="{Binding Value.Student}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Content="{Binding Name}" Grid.Column="1" Grid.Row="0"/>
+        <Label Content="{Binding Surname}" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="{Binding BirthDate}" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="{Binding BirthNumber}" Grid.Column="1" Grid.Row="3"/>
 
     </Grid>
 </Window>

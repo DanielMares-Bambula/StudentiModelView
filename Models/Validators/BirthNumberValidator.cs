@@ -4,12 +4,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 namespace DependencyInjection
 {
-    class BirthNumberValidator : IIntValidator
+    class BirthNumberValidator : IStringValidator
     {
-        Regex regex = new Regex(@"\d*\/\d*");
-        public bool IsValid(int i)
+        //Regex bd = new Regex(@"\d{6}\/\d{3}");
+        //Regex bdl = new Regex(@"\d{6}\/\d{4}");
+        Regex bn = new Regex(@"\d*\/\d*");
+        public bool IsValid(string s)
         {
-            if (regex.IsMatch(i.ToString()))
+            if (bn.IsMatch(s))
             {
                 return true;
             }

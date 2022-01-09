@@ -6,13 +6,13 @@ namespace DependencyInjection
 {
     //class Student
     //{
-    //    readonly IIntValidator vekValidator;
+    //    readonly IIntValidator BirthNumberValidator;
     //    readonly IStringValidator surnameValidator;
     //    public string Jmeno { get; set; }
-    //   // public int Vek { get; set; }
+        // public int Vek { get; set; }
 
-    //    // Osoba je závislá na validátorech
-    //    // závislost je injektovaná v konstruktoru
+        // Osoba je závislá na validátorech
+        // závislost je injektovaná v konstruktoru
     //    public Student(IIntValidator iv, IStringValidator sv)
     //    {
     //        vekValidator = iv; surnameValidator = sv;
@@ -54,7 +54,7 @@ namespace DependencyInjection
     //        return $"{Jmeno}:{Vek}";
     //    }
     //}
-    //class Program
+    // class Program
     //{
     //    static void Main()
     //    {
